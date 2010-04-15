@@ -1,0 +1,81 @@
+<form name="frmApuesta" action="abmApuestaLate.php" method="post">
+
+	<table>
+		<tr><td>Detalle Apuesta {{ variable }}</td><tr>
+		<tr>
+			<td>
+				<table>
+					<tr>
+						<td>&nbsp;</td>
+						<td>fecha</td>
+						<td>&nbsp;</td>
+						<td>pais1</td>
+						<td>apuesta</td>
+						<td>final</td>
+						<td>puntos</td>
+						<td>final</td>
+						<td>apuesta</td>
+						<td>pais2</td>
+						<td>&nbsp;</td>
+						<td>quedan...</td>
+					</tr>					
+					<tr>
+						<td><b><?php echo $ronda?></b></td>
+					</tr>					
+					<tr>
+						<td>
+							<img src="imgs/flags/dp<?php echo $tbEvento?>.gif" ></img>
+						</td>
+						<td>
+							<?php echo $fecha?>
+							<input type="hidden" name='ronda[<?php echo $idPartido?>]' value='<?php echo $ronda?>'></input>
+						</td>
+						<td>
+							<img src="imgs/flags/<?php echo $idEquipo1?>.png"></img>
+						</td>
+						<td>
+							<?php echo $nombre1?>
+						</td>
+						<td>
+							<input class='searchBox' name='golesEquipo1[<?php echo $idPartido?>]' value='<?php echo $golesEquipo1[$idPartido]?>'></input>
+						</td>
+						<td>
+							<?php echo $golesFinalEquipo1?>
+						</td>
+						<td>
+							<b><?php echo $puntos?></b>
+						</td>
+						<td>
+							<?php echo $golesFinalEquipo2?>
+						</td>
+						<td>
+							<input name='golesEquipo2[<?php echo $idPartido?>]' value='<?php echo $golesEquipo2[$idPartido]?>'></input>
+						</td>
+						<td>
+							<?php echo $nombre2?>
+						</td>
+						<td>
+							<img style="border:1px solid gray" src="imgs/flags/<?php echo $idEquipo2?>.png" ></img>
+						</td>
+						<td>
+							<?php if ($mkCoke==1){?><img src="imgs/coke.gif" style="border:1px solid gray"></img><?php }?>
+							<?php if ($mkBazan==1){?><img src="imgs/bazanSmall.gif" style="border:1px solid gray"></img><?php }?>
+							<?php if ($mkVieja==1){?><img src="imgs/vieja.gif" style="border:1px solid gray"></img><?php }?>
+							<?php if ($mkMotoraton==1){?><img src="imgs/motoraton.gif" style="border:1px solid gray"></img><?php }?>
+							<?php if ($mkExcellent>=1){?><img src="imgs/excellent.gif" style="border:1px solid gray"></img><?php }?>
+							<?php if ($mkAmargo>=1){?><img src="imgs/amargo.gif" style="border:1px solid gray"></img><?php }?>
+							<?php if ($mkUsa>=1){?><img src="imgs/usa.gif" style="border:1px solid gray"></img><?php }?>
+							<?php if ($mkHyena>=1){?><img src="imgs/hyena.gif" style="border:1px solid gray"></img><?php }?>
+						</td>					
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input value="Guardar Cambios" type=submit>
+			</td>
+		</tr>
+	</table>
+
+</form>
