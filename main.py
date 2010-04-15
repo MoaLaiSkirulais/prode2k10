@@ -4,10 +4,14 @@ from google.appengine.ext import webapp
 from google.appengine.ext.webapp.util import run_wsgi_app
 
 import sys; sys.path.append('myapp')
-
+ 
 import prode
 import initData
 reload(initData)
+
+if 'initData' in sys.modules:  
+    del(sys.modules["initData"])  
+import initData
 
 class InitDb(webapp.RequestHandler):
     
