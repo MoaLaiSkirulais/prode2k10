@@ -1,25 +1,22 @@
+import pprint
 import cgi
 import imp
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp.util import run_wsgi_app
 
 import sys; sys.path.append('myapp')
- 
+
 import prode
 import initData
-reload(initData)
-
-if 'initData' in sys.modules:  
-    del(sys.modules["initData"])  
-import initData
-
+  
 class InitDb(webapp.RequestHandler):
     
     def get(self):
-        
-        print dir(prode)
+ 
+        #print dir(prode)
+        #reload(initData)
         initData.init()
-	
+ 
 class Main(webapp.RequestHandler):
 
     def get(self):
